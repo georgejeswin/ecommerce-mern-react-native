@@ -75,6 +75,7 @@ const Register = (props) => {
           onChangeText={(text) => setName(text)}
           value={name}
         />
+        <Text>Hello: {baseURL}</Text>
         <Input
           placeholder={"Phone"}
           name={"phone"}
@@ -105,7 +106,10 @@ const Register = (props) => {
             secondary
             onPress={() => props.navigation.navigate("Login")}
           >
-            <Text style={{ color: "#FFF", fontWeight: "bold" }}> Back to login</Text>
+            <Text style={{ color: "#FFF", fontWeight: "bold" }}>
+              {" "}
+              Back to login
+            </Text>
           </EasyButton>
         </View>
       </FormContainer>
