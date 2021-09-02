@@ -30,12 +30,19 @@ const ProductContainer = (props) => {
   const [active, setActive] = useState();
   const [initialState, setInitialState] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [todos, setTodos] = useState([]);
 
   useFocusEffect(
     useCallback(() => {
       setFocus(false);
 
       setActive(-1);
+      axios.get("https://jsonplaceholder.typicode.com/todos/").then((res) => {
+        setTodos(res.data);
+      });
+      // .then((json) => {
+      //   setTodos(json);
+      // });
 
       //Products
       axios
@@ -168,6 +175,9 @@ const ProductContainer = (props) => {
         <Container style={(style.center, { backgroundColor: "#f2f2f2" })}>
           <ActivityIndicator size="large" color="#a0e1eb" />
           {/* <Text>HEllo {baseURL}</Text> */}
+          {/* {todos.map((todo) => {
+            return <Text key={todo.id}>{todo.title}</Text>;
+          })} */}
         </Container>
       )}
     </>

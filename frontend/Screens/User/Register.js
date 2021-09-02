@@ -75,7 +75,6 @@ const Register = (props) => {
           onChangeText={(text) => setName(text)}
           value={name}
         />
-        <Text>Hello: {baseURL}</Text>
         <Input
           placeholder={"Phone"}
           name={"phone"}
